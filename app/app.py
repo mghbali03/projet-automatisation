@@ -11,11 +11,11 @@ formations = [
 ]
 
 @app.route("/")
-def index():
+def home():
     return render_template("HomePage.html")
 
 @app.route("/formations")
-def index():
+def formations_page():
     return render_template("index.html", formations=formations)
 
 if __name__ == "__main__":
