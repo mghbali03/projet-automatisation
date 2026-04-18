@@ -33,19 +33,25 @@ jobs:
       #     curl -f http://localhost:3000 || exit 1
       #     echo "✅ Application accessible sur port 3000"
 
-      - name: Test - Start container
+      - name: Run with docker-compose
         run: |
-          docker run -d -p 3000:3000 --name test-container formation-app:latest
-          sleep 10
-          docker ps -a
-          docker logs test-container
-          curl -v http://localhost:3000
+          docker compose up -d
+          until curl -s http://localhost:3000; do
+            echo "Waiting for app..."
+            sleep 2
+          done
+
+          echo "App is running"
 
       # 5. Nettoyage
+      # - name: Cleanup
+      #   run: |
+      #     docker stop test-container
+      #     docker rm test-container
+
       - name: Cleanup
         run: |
-          docker stop test-container
-          docker rm test-container
+          docker compose down
 
       # 6. (Optionnel) Push vers Docker Hub
       # - name: Push to Docker Hub
