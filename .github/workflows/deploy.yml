@@ -25,24 +25,7 @@ jobs:
           docker build -t formation-app:latest .
           echo "✅ Image construite avec succès"
 
-      # 4. Test basique (vérifier que le conteneur démarre)
-      # - name: Test - Start container
-      #   run: |
-      #     docker run -d -p 3000:3000 --name test-container formation-app:latest
-      #     sleep 5
-      #     curl -f http://localhost:3000 || exit 1
-      #     echo "✅ Application accessible sur port 3000"
-
-      # - name: Run with docker-compose
-      #   run: |
-      #     docker compose up -d
-      #     until curl -s http://localhost:3000; do
-      #       echo "Waiting for app..."
-      #       sleep 2
-      #     done
-
-      #     echo "App is running!"
-
+      # 4. Vérifier que le conteneur démarre
       - name: Run with docker-compose
         run: |
           docker compose up -d
