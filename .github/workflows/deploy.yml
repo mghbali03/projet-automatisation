@@ -33,15 +33,21 @@ jobs:
       #     curl -f http://localhost:3000 || exit 1
       #     echo "✅ Application accessible sur port 3000"
 
+      # - name: Run with docker-compose
+      #   run: |
+      #     docker compose up -d
+      #     until curl -s http://localhost:3000; do
+      #       echo "Waiting for app..."
+      #       sleep 2
+      #     done
+
+      #     echo "App is running!"
+
       - name: Run with docker-compose
         run: |
           docker compose up -d
-          until curl -s http://localhost:3000; do
-            echo "Waiting for app..."
-            sleep 2
-          done
-
-          echo "App is running"
+          sleep 10
+          curl -f http://localhost:3000
 
       # 5. Nettoyage
       # - name: Cleanup
