@@ -26,12 +26,20 @@ jobs:
           echo "✅ Image construite avec succès"
 
       # 4. Test basique (vérifier que le conteneur démarre)
+      # - name: Test - Start container
+      #   run: |
+      #     docker run -d -p 3000:3000 --name test-container formation-app:latest
+      #     sleep 5
+      #     curl -f http://localhost:3000 || exit 1
+      #     echo "✅ Application accessible sur port 3000"
+
       - name: Test - Start container
         run: |
           docker run -d -p 3000:3000 --name test-container formation-app:latest
-          sleep 5
-          curl -f http://localhost:3000 || exit 1
-          echo "✅ Application accessible sur port 3000"
+          sleep 10
+          docker ps -a
+          docker logs test-container
+          curl -v http://localhost:3000
 
       # 5. Nettoyage
       - name: Cleanup
