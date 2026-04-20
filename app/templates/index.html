@@ -4,66 +4,23 @@
     <meta charset="UTF-8">
     <title>Formations DevOps</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', sans-serif; background: #f0f4f8; color: #333; }
-        header {
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
         }
-        header h1 { font-size: 2.2rem; margin-bottom: 8px; }
-        header p { font-size: 1rem; opacity: 0.8; }
-        .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
-        h2 { font-size: 1.4rem; color: #1a1a2e; margin-bottom: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 24px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            border-left: 4px solid #0f3460;
-            transition: transform 0.2s;
-        }
-        .card:hover { transform: translateY(-4px); }
-        .card h3 { font-size: 1.1rem; color: #0f3460; margin-bottom: 10px; }
-        .badge {
-            display: inline-block;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-right: 6px;
-            margin-top: 8px;
-        }
-        .badge-duree { background: #e8f4fd; color: #1a7abf; }
-        .badge-niveau { background: #fef3e2; color: #d4800a; }
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.85rem;
-            color: #888;
-            margin-top: 40px;
+        .home{
+            color: brown;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>🎓 Catalogue de Formations</h1>
-        <p>Développez vos compétences avec nos formations professionnelles</p>
-    </header>
     <div class="container">
-        <h2>📚 Nos formations disponibles ({{ formations|length }} formations)</h2>
-        <div class="grid">
-            {% for f in formations %}
-            <div class="card">
-                <h3>{{ f.titre }}</h3>
-                <span class="badge badge-duree">⏱ {{ f.duree }}</span>
-                <span class="badge badge-niveau">{{ f.niveau }}</span>
-            </div>
-            {% endfor %}
-        </div>
+        <h1 class="home">HomePage</h1>
+        <button>
+            <a href="/formations" style="padding: 10px; color: rgb(75, 0, 145);">Formations</a>
+        </button>
     </div>
-    <footer>Mini-Projet DevOps — Formation App © 2024</footer>
 </body>
 </html>
