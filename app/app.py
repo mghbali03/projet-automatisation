@@ -8,6 +8,7 @@ formations = [
     {"id": 3, "titre": "Python pour le Web", "duree": "25h", "niveau": "Débutant"},
     {"id": 4, "titre": "Linux Administration", "duree": "20h", "niveau": "Intermédiaire"},
     {"id": 5, "titre": "Sécurité Réseau", "duree": "35h", "niveau": "Avancé"},
+    {"id": 6, "titre": "SEO", "duree": "20h", "niveau": "Intermédiaire"},
 ]
 
 @app.route("/")
