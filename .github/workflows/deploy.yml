@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       # 1. Récupérer le code
@@ -26,17 +26,9 @@ jobs:
           echo "✅ Image construite avec succès"
 
       # 4. Vérifier que le conteneur démarre
-      # - name: Run with docker-compose
-      #   run: |
-      #     docker compose up -d
-      #     sleep 10
-      #     curl -f http://localhost:3000
-
-      # 4. Run docker locally
-      - name: Run docker locally
+      - name: Run with docker-compose
         run: |
-          docker compose down
-          docker compose up -d --build
+          docker compose up -d
           sleep 10
           curl -f http://localhost:3000
 
