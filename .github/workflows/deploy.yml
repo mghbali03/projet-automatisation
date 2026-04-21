@@ -23,14 +23,14 @@ jobs:
       - name: Build Docker image
         run: |
           docker build -t formation-app:latest .
-          echo "✅ Image construite avec succès"
+          echo "Image construite avec succès!"
 
       # 4. Vérifier que le conteneur démarre
       - name: Run with docker-compose
         run: |
           docker compose up -d
           sleep 10
-          curl -f http://localhost:3000
+          curl -f http://localhost:3002
 
       # 5. Nettoyage
       # - name: Cleanup

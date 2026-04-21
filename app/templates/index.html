@@ -1,26 +1,160 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Formations DevOps</title>
-    <style>
-        .container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-        }
-        .home{
-            color: brown;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formations DevOps</title>
+
+<style>
+:root {
+    --primary: #00d4aa;
+    --secondary: #1565c0;
+    --bg: #0d1b2a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+.hero {
+    height: 100vh;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem;
+}
+
+.hero-dot {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.08;
+}
+
+.dot1 {
+    width: 320px;
+    height: 320px;
+    top: -100px;
+    right: -80px;
+    background: var(--primary);
+}
+
+.dot2 {
+    width: 200px;
+    height: 200px;
+    bottom: -60px;
+    left: -40px;
+    background: var(--secondary);
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 2;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: rgba(0,212,170,0.12);
+    border: 1px solid rgba(0,212,170,0.3);
+    color: var(--primary);
+    font-size: 12px;
+    padding: 5px 16px;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-title span {
+    color: var(--primary);
+}
+
+.hero-sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 15px;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 26px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-main {
+    background: var(--secondary);
+    color: #fff;
+}
+
+.btn-main:hover {
+    background: #0d47a1;
+}
+
+.btn-ghost {
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+}
+
+.btn-ghost:hover {
+    background: rgba(255,255,255,0.1);
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <h1 class="home">HomePage</h1>
-        <button>
-            <a href="/formations" style="padding: 10px; color: rgb(75, 0, 145);">Formations</a>
-        </button>
+
+<section class="hero">
+    <div class="hero-dot dot1"></div>
+    <div class="hero-dot dot2"></div>
+
+    <div class="hero-content">
+        <div class="hero-tag">Plateforme de formation professionnelle</div>
+
+        <h1 class="hero-title">
+            Développez vos compétences <span>tech</span> en 2026
+        </h1>
+
+        <p class="hero-sub">
+            Formations certifiantes en DevOps, développement web, cybersécurité et data science.
+            Apprenez avec des experts du terrain.
+        </p>
+
+        <div class="hero-actions">
+            <a href="/formations" class="btn btn-main">
+                Voir les formations →
+            </a>
+        </div>
     </div>
+</section>
+
 </body>
 </html>

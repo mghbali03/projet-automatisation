@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app/ .
 
 # Exposer le port 3000
-EXPOSE 3000
+EXPOSE 3002
 
 # Commande de démarrage
 CMD ["python", "app.py"]
