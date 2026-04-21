@@ -57,19 +57,13 @@
         <div class="grid">
             {% for f in formations %}
             <div class="card">
-                <h3>{{ f.titre }}</h3>
-                <span class="badge badge-duree">⏱ {{ f.duree }}</span>
-                <span class="badge badge-niveau">{{ f.niveau }}</span>
+                <h3>{{ f.name }}</h3>
+                <span class="badge badge-duree">⏱ {{ f.code }}</span>
+                <span class="badge badge-niveau">{{ f.description }}</span>
             </div>
             {% endfor %}
         </div>
     </div>
     <footer>Mini-Projet DevOps — Formation App © 2026</footer>
-        <!-- <div class="container">
-        <h1 class="home">HomePage</h1>
-        <button>
-            <a href="/formations" style="padding: 10px; color: rgb(75, 0, 145);">Formations</a>
-        </button>
-    </div> -->
 </body>
 </html>
