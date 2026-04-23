@@ -1616,3 +1616,26 @@ a.info-item {
     justify-content: center;
 	padding-top: 60px;
 }
+.card-item{
+    background: linear-gradient(135deg, var(--carbon-medium), var(--carbon-dark)); 
+    border: 2px solid var(--metal-dark); 
+    border-radius: 20px; 
+    position: relative; 
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.detail-section{
+	display: flex;
+    align-items: flex-start;
+	justify-content: space-between;
+	gap:40px;
+    position: relative;
+    padding: 140px 80px 80px;
+    background: radial-gradient(ellipse at center, rgba(153, 69, 255, 0.1) 0%, transparent 50%);
+}
+.detail-section .details{
+	line-height: 1.6;
+}
+.detail-section .details p{
+	max-width: 600px;
+}

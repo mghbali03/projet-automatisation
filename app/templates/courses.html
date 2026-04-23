@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Formations DevOps</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <header class="header" id="header">
+    <head>
+        <meta charset="UTF-8">
+        <title>Formations DevOps</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <header class="header" id="header">
             <nav class="nav-container">
                 <a href="#home" class="logo">
                     <div class="logo-icon">
@@ -21,10 +21,7 @@
                 </a>
                 <ul class="nav-menu" id="navMenu">
                     <li>
-                        <a
-                            style="color:white;"
-                            href="{{ url_for('home') }}"
-                        >Home</a>
+                        <a style="color:white;" href="{{ url_for('home') }}">Home</a>
                     </li>
                     <li>
                         <a href="{{ url_for('home') }}#about" class="nav-link">About</a>
@@ -63,16 +60,18 @@
                             </div>
                             <div class="card-content" style="padding:30px;">
                                 <h3 class="card-title">{{c.name}}</h3>
-                                <p class="card-description">{{c.description}}</p>
+                                <p class="card-description">{{ c.description[:100] }}...</p>
                                 <div class="card-tech"></div>
-                                <button class="card-cta" onclick="scrollToSection('about')">Explore</button>
+                                <a href="{{ url_for('course_detail', id=c._id) }}" class="card-cta">
+                                    Explore
+                                </a>
                             </div>
                         </div>
                     </div>
                     {% endfor %}
                 </div>
             </section>
-    <footer class="footer">
+            <footer class="footer">
                 <div class="footer-content">
                     <div class="footer-brand">
                         <div class="footer-logo">
@@ -129,5 +128,5 @@
                     </div>
                 </div>
             </footer>
-</body>
-</html>
+        </body>
+    </html>

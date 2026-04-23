@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Formations DevOps</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <header class="header" id="header">
+            <nav class="nav-container">
+                <a href="#home" class="logo">
+                    <div class="logo-icon">
+                        <div class="logo-prism">
+                            <div class="prism-shape"></div>
+                        </div>
+                    </div>
+                    <span class="logo-text">
+                        <span class="prism">Meryem</span>
+                        <span class="flux">& Sanae</span>
+                    </span>
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li>
+                        <a style="color:white;" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('home') }}#about" class="nav-link">About</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('home') }}#stats" class="nav-link">Scalability</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('home') }}#more" class="nav-link">More</a>
+                    </li>
+                    <li>
+                        <a
+                            class="card-cta"
+                            style="color:white;"
+                            href="{{ url_for('courses_page') }}"
+                            class="nav-link"
+                        >Courses</a>
+                    </li>
+                </ul>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+        <section class="detail-section" >
+            <div class="card-item">
+                <div class="card" style="width:400px">
+                    <div class="card-image">
+                        <img src="{{ url_for('static', filename='images/' + course.image) }}" width="150">
+                    </div>
+                    <div class="card-content" style="padding:30px;">
+                        <h3 class="card-title">{{ course.name }}</h3>
+                        <p class="card-description">{{ course.description[:200] }}...</p>
+                        <a href="" class="card-cta">
+                            Enroll now
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <h2>Course Details</h2>
+                <p><strong>Code:</strong> {{ course.name }}</p>
+                <p><strong>Code:</strong> {{ course.code }}</p>
+                <p><strong>Description:</strong> {{ course.description }}</p>
+                <p><strong>Type:</strong> {{ course.document }}</p>
+                <p><strong>Date:</strong> {{ course.createdAt.strftime('%d %B %Y - %H:%M') }}</p>
+                <div style="padding-top:20px;"><a class="card-cta" href="{{ url_for('courses_page') }}">← Back to courses</a></div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <div class="logo-prism">
+                                <div class="prism-shape"></div>
+                            </div>
+                        </div>
+                        <span class="logo-text">
+                            <span class="prism">SANAE</span>
+                            <span class="flux">& MERYEM</span>
+                        </span>
+                    </div>
+                    <p class="footer-description">
+                        Our project was carried out by a team composed of two members, where we collaborated to design and implement the system.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">t</a>
+                        <a href="#" class="social-icon">in</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <div class="footer-links">
+                        <a href="#">Web Development</a>
+                        <a href="#">App Development</a>
+                        <a href="#">Cloud Solutions</a>
+                        <a href="#">AI Integration</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <div class="footer-links">
+                        <a href="#">About Us</a>
+                        <a href="#">Our Team</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Press Kit</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <div class="footer-links">
+                        <a href="#">Documentation</a>
+                        <a href="#">API Reference</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2026 EST. All rights reserved.
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
