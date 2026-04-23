@@ -4,23 +4,20 @@ from db import courses_collection
 app = Flask(__name__)
 
 
-# formations = [
-#     {"id": 1, "titre": "DevOps & CI/CD", "duree": "40h", "niveau": "Intermédiaire"},
-#     {"id": 2, "titre": "Docker & Kubernetes", "duree": "30h", "niveau": "Avancé"},
-#     {"id": 3, "titre": "Python pour le Web", "duree": "25h", "niveau": "Débutant"},
-#     {"id": 4, "titre": "Linux Administration", "duree": "20h", "niveau": "Intermédiaire"},
-#     {"id": 5, "titre": "Sécurité Réseau", "duree": "35h", "niveau": "Avancé"},
-#     {"id": 6, "titre": "SEO", "duree": "20h", "niveau": "Intermédiaire"},
-# ]
-
 @app.route("/")
 def home():
-    return render_template("index.html")
-
-@app.route("/formations")
-def formations_page():
     courses = list(courses_collection.find())
-    return render_template("Formations.html", formations=courses)
+    for c in courses:
+        c["_id"] = str(c["_id"])
+
+    return render_template("index.html", data=courses)
+
+
+
+@app.route("/courses")
+def courses_page():
+    courses = list(courses_collection.find())
+    return render_template("courses.html", courses=courses)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=3002, debug=False)

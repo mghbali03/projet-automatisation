@@ -53,9 +53,9 @@
         <p>Développez vos compétences avec nos formations professionnelles</p>
     </header>
     <div class="container">
-        <h2>Nos formations disponibles ({{ formations|length }} formations)</h2>
+        <h2>Nos formations disponibles ({{ courses|length }} formations)</h2>
         <div class="grid">
-            {% for f in formations %}
+            {% for f in courses %}
             <div class="card">
                 <h3>{{ f.name }}</h3>
                 <span class="badge badge-duree">⏱ {{ f.code }}</span>
