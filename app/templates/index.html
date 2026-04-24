@@ -71,9 +71,11 @@
                             </div>
                             <div class="card-content" style="padding:30px;">
                                 <h3 class="card-title">{{c.name}}</h3>
-                                <p class="card-description">{{c.description}}</p>
+                                <p class="card-description">{{c.description[:100] }}</p>
                                 <div class="card-tech"></div>
-                                <button class="card-cta" onclick="scrollToSection('about')">Explore</button>
+                                <a href="{{ url_for('course_detail', id=c._id) }}" class="card-cta">
+                                    Explore
+                                </a>
                             </div>
                         </div>
                     </div>
